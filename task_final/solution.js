@@ -39,13 +39,12 @@ function sendRequest(name, phone, address, goods, sum) {
             address: "ул. " + address.street + ", дом " + address.house + ", " + address.entrance + " подъезд, " + address.floor + " этаж, кв." + address.flat,
             sum: sum
         },
-        goods: [ ]
+        goods: []
     };
     for (let i = 0; i <= goods.length; i++) {
-        console.log(goods[i]["title", "count"]);
-    }
+        data.goods.push(goods[i]["title", "count"]);
+    };
 
-    let json = JSON.sendRequest(data, ['goods', 'title', 'count']);
-
-    return json;
+    let jsonData = JSON.stringify({ data });
+    return jsonData;
 }
