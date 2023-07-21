@@ -18,11 +18,9 @@ function calcShipping(sum, min, shipping) {
 
     // Конец решения задания №2.1.
     let shippingSum;
-    if (productsSum = 0) {
+    if (productsSum == 0 || productsSum >= freeShippingMinSum) {
         shippingSum = 0
-    } else if (productsSum >= freeShippingMinSum) {
-        shippingSum = 0
-    } else if (productsSum > 0 , productsSum < freeShippingMinSum) {
+    } else {
         shippingSum = shippingPrice
     };
     return shippingSum;
@@ -77,6 +75,6 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     let shippingSum = calcShipping(totalSum, shippingFreeMinSum, shippingPrice);
     totalSum = totalSum + shippingSum;
     let freeShipping;
-    freeShipping = (freeShipping == 0);
+    freeShipping = (shippingSum == 0);
     return {discount: discountSum, freeShipping, shipping: shippingSum, total: totalSum};
 }
